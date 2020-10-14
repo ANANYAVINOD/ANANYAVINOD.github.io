@@ -1,0 +1,111 @@
+/*................................................
+    BODY SECTION
+.................................................*/
+.content {
+    width: 70%;
+    padding-top: 150px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.panel-left h1 {
+    padding-bottom: 20px;
+}
+
+.panel-left h2 {
+    font-weight: normal;
+    padding-bottom: 20px;
+}
+
+.panel-left p {
+    padding-bottom: 20px;
+}
+
+.panel-right {
+    padding: 50px;
+    background-color: #eabf25;
+    height: 50%;
+}
+
+input[type=text],
+input[type=email] {
+    padding: 8px;
+}
+ 
+#subject {
+    padding-bottom: 50px;
+}
+
+.label-div {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-div {
+    margin-bottom: 10px;
+}
+
+::placeholder {
+    font-size: 13px;
+}
+
+#contact-button {
+    padding: 8px;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+#contact-button:hover {
+    border: 3px solid black;
+}
+
+/*................................................
+    8.MEDIA QUERIES
+.................................................*/  
+@media (max-width: 991px) {
+    .content {
+        flex-direction: column-reverse;
+    }
+    h1 {
+        display: none;
+    }
+    .panel-left h2 {
+        margin-top: 20px;
+    }
+    .panel-left {
+       text-align: center;
+    }
+    .panel-right {
+        padding: 50px;
+    }
+    input[type=text],
+    input[type=email],
+    #subject {
+    padding-right: 60%;
+    }
+    #contact-button {
+        left: 45%;
+        position: absolute;
+    }
+}
+
+@media (max-width:768px) {
+    input[type=text],
+    input[type=email],
+    #subject {
+    padding-right: 30%;
+    } 
+}
+
+@media (max-width:486px) {
+    input[type=text],
+    input[type=email],
+    #subject {
+    padding-right: 0;
+    padding: 2px;
+    } 
+
+}
