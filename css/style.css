@@ -6,15 +6,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h2 {
+.content h2 {
   font-size: 30px;
   margin-bottom: 20px;
 }
 
+.banner {
+  margin-top: 80px;
+}
+
 .content {
   padding: 64px;
-  padding-top: 100px;
-  background-color:#eabf25 ;
 }
 
 .content .panel-left,
@@ -33,12 +35,11 @@ h2 {
   font-weight: bolder;
   margin-bottom: 40px;
 }
+
 .block {
   padding: 40px;
-}
+  border-top: 1px solid #eabf25; ;
 
-.block-training {
-background-color: #3F6CE5 ;
 }
 
 .listing-style-one li img {
@@ -80,14 +81,8 @@ background-color: #3F6CE5 ;
   text-align: center;
 }
 
-.block-centre ,
-.block-award,
-.block-features {
-border-bottom: 1px solid #eabf25; ;
-}
-
 /*................................................
-  8.MEDIA QUERIES
+    8.MEDIA QUERIES
 .................................................*/
 @media (max-width:990px) {
 .content {
@@ -104,15 +99,32 @@ border-bottom: 1px solid #eabf25; ;
   margin-left: 0;
 }
 }
+
+@media (max-width:990px) {
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content .panel-left,
+  .content .panel-right {
+    width: 100%;
+  }
+  .listing-style-three li {
+    padding-left: 0;
+    text-align: center;
+    margin-left: 0;
+  }
+}
 @media (max-width: 768px)  { 
 .listing-style-two li{
   width: 50%;
   padding: 10px;
-}
+ }
 }
 @media (max-width: 486px) {
 .listing-style-two li{
   width: 100%;
   padding: 10px;
-}
+ }
 }

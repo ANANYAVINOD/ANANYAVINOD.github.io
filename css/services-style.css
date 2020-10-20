@@ -7,7 +7,8 @@ body {
 }
 
 .banner {
-    padding: 120px;
+    margin-top: 120px;
+    padding: 80px;
     margin-left :30px;
     margin-right: 30px;
     background-image: url("../images/banner.jpg");
@@ -35,17 +36,22 @@ h1 {
     font-size: 20px;
 }
 
+.block-information #service-button {
+    margin-top: 20px;
+}
+
 #service-button:hover {
     box-shadow: 2px 2px 1px 5px #eabf25  ;
 }
 
 .content {
-    margin:0 auto;
-    width:70%;
+    margin: 0 auto;
+    width: 95%;
 }
 
 .block {
     margin-top :20px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -64,3 +70,5 @@ h2 {
         text-align: center;
     }
 }
+
+

@@ -16,11 +16,11 @@
             <img src="../images/logo.png" alt="A Solutions" id="logoImage">
             <nav>
                 <ul class= "menu-bar flex-box">
-                   <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="../pages/about.html">About</a></li>
                     <li><a href="../pages/services.html">Services</a></li>
                     <li><a href="../pages/training.html">Training</a></li>
-                    <li><a href="../pages/contact.html">Contact</a></li>
+                    <li><a class="current" href="../pages/contact.html">Contact</a></li>
                 </ul> 
             </nav>  
             <div class="icon-bar flex-box">
@@ -55,43 +55,77 @@
             </div>
             <div class="panel-right">
                 <form>
-                    <div class="label-div">
+                    <div class="flex-box">
+                      <div class="label-div">
                         <label for="firstName">First Name</label>
-                    </div>
-                    <div class="form-div" id="name-container">
+                      </div>
+                      <div class="form-div" id="name-container">
                         <input type="text" name="firstName" placeholder="First Name" class="form-field" id="fname">
+                        <p class="error name-error" id="fname-error"></p>
+                      </div>
                     </div>
-                    
-                    <div class="label-div">
-                        <label for="Last Name">Subject</label>
-                    </div>
-                    <div class="form-div" id="name-container">
+
+                    <div class="flex-box">
+                      <div class="label-div">
+                        <label for="Last Name">Last Name</label>
+                      </div>
+                      <div class="form-div" id="name-container">
                         <input type="text" name="lastName" placeholder="Last Name" class="form-field" id="lname">
+                        <p class="error name-error" id="lname-error"></p>
+                      </div>
                     </div>
 
-                    <div class="label-div">
+                    <div class="flex-box">
+                      <div class="label-div">
+                        <label for="DoB">Date of Birth</label>
+                      </div>
+                      <div class="form-div" id="date-container">
+                        <input type="date" name="dateOfBirth" class="form-field" id="DoB">
+                        <p class="error" id="dob-error"></p>
+                      </div>
+                    </div>
+
+                    <div class="flex-box"> 
+                      <div class="label-div">
+                        <label for="number">Phone number</label>
+                      </div>
+                      <div class="form-div" id="num-container">
+                        <input type="tel" name="number" placeholder="xxxxxxxxxx" class="form-field" id="num">
+                        <p class="error" id="num-error"></p>
+                      </div>
+                    </div>
+ 
+                    <div class="flex-box">
+                      <div class="label-div">
                         <label for="mail">Email</label>
-                    </div>
-                    <div class="form-div" id="mail-container">
+                      </div>
+                      <div class="form-div" id="mail-container">
                         <input type="email" name="mail" placeholder="Email" class="form-field" id="mail">
+                        <p class="error" id="mail-error"></p>
+                      </div>
                     </div>
 
-                    <div class="label-div">
-                        <label for="companyNmae">Comapny Name</label>
-                    </div>
-                    <div class="form-div" id="company-container">
+                    <div class="flex-box"> 
+                      <div class="label-div">
+                        <label for="companyNmae">Company Name</label>
+                      </div>
+                      <div class="form-div" id="company-container">
                         <input type="text" name="companyNmae" placeholder="Company Name" class="form-field" id="cname">
+                      </div>
                     </div>
 
-                    <div class="label-div">
+                    <div class="flex-box">
+                      <div class="label-div">
                         <label for="Subject">Subject</label>
-                    </div>
-                    <div class="form-div" id="subject-container">
+                      </div>
+                      <div class="form-div" id="subject-container">
                         <input type="text" name="subject" placeholder="Subject" class="form-field" id="subject">
+                        <p class="error" id="subject-error"></p>
+                      </div>
                     </div>
 
                     <div class="btn">
-                        <input type=button value='Contact Us' id="contact-button">
+                        <button type="submit" id="contact-button">Contact Us</button>
                     </div>        
                 </form>
             </div>
@@ -144,6 +178,7 @@
                <h4>Copyright @ 2020 ASolutions, All Rights Reserved</h4>
             </div>
         </div>
-    </footer>   
+    </footer>  
+    <script src="../scripts/form.js"></script>
 </body>
 </html>
