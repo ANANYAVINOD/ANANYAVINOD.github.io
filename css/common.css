@@ -544,9 +544,10 @@ nav .current {
 
 .icon-bar i {
     font-size: 20px;
-    display: flex;
+    display: none;
     padding-left: 30px;
     padding-right: 30px; 
+
 }
 
 .icon-bar i:hover {
@@ -555,6 +556,114 @@ nav .current {
   cursor: pointer;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  color: black;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  padding: 12px 12px 12px 20px;
+  background-color: #eabf25;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 30px;
+  border-radius: 5px;
+}
+
+.dropdown-content p{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 5px;
+  font-size: 13px;
+  border-radius: 3px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: black;
+  color: white;
+}
+
+.btn:hover {
+  border: 2px solid black;
+}
+
+.show {
+  display: block;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  right: 10px;
+  top: 5px;
+  border: 3px solid #f1f1f1;
+  padding-top: 20px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+}
+
+.form-container ::placeholder {
+  font-size: 12px;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password],
+.form-container input[type=email] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container .btn {
+  background-color:  #eabf25;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 8px;
+  display: block;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 1px;
+  right: -28px;
+  background-color: white;
+  color: black;
+  font-weight: normal;
+  display: block;
+}
+
+#logout-button {
+  margin-top: 10px;
+}
 
 /*................................................
     FOOTER SECTION

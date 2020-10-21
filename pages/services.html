@@ -24,9 +24,31 @@
                 </ul> 
             </nav>
             <div class="icon-bar flex-box">
-                <i class="fa fa-search"></i>
-                <i class="fa fa-user" ></i>
-                <i class="fa fa-envelope"></i>
+                <i class="fa fa-search" id="search"></i>
+                <i class="fa fa-user" id="dropbtn">
+                    <div id="Dropdown" class="dropdown-content">
+                       <p>Welcome back <button type="submit" class="btn" onclick="openForm()">Login</button></p> 
+                    </div>
+                    <div id="loggedInDropdown" class="dropdown-content">
+                        <span id="name-display"></span><span></span><br>
+                        <span id="logout"> <button id="logout-button" class="btn" >Logout</button> </span>
+                    </div>
+                </i>
+                    <div class="form-popup" id="myForm">
+                        <form class="form-container">
+                            <i class="fa fa-close" id="closeBtn" onclick="closeForm()"></i>
+                      
+                          <label for="name">Username</label>
+                          <input type="text" placeholder="Enter Username" name="name" id="name" required>
+                      
+                          <label for="psw">Password</label>
+                          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                          
+                          <span class="error-message" id="error-message"></span>
+                          <button type="button" id="login-button" class="btn" onclick="login()">Login</button>
+                        </form>
+                    </div>
+                <i class="fa fa-envelope" id="envelope"></i>
             </div>  
             <div class="nav-icon">
                 <div class="line1"></div>
@@ -136,6 +158,8 @@
                <h4>Copyright @ 2020 ASolutions, All Rights Reserved</h4>
             </div>
         </div>
-    </footer>   
+    </footer> 
+    <script src="../scripts/login.js"></script>
+    <script src="../scripts/menu.js"></script>  
 </body>
 </html>

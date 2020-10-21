@@ -1,7 +1,8 @@
 document.querySelector("#contact-button").addEventListener("click", function (event) {
     event.preventDefault();
-    const firstName = firstNameValidate();
-    const lastName = lastNameValidate();
+    const name = nameValidate();
+    const firstName = name[0];
+    const lastName = name[1];
     const phoneNo = numValidate();
     const emailId = emailValidate();
     const subj = subjectValidate();
@@ -15,46 +16,33 @@ document.querySelector("#contact-button").addEventListener("click", function (ev
 });
 
 
-/*function nameValidate() {
+function nameValidate() {
     const firstName = document.getElementById('fname').value;
     const lastName = document.getElementById('lname').value;
     const fnameError = document.getElementById('fname-error');
     const lnameError = document.getElementById('lname-error');
     const nameFormat = /^[A-Za-z][A-Za-z\s]{3,10}$/;
-    if(firstName == "") {
-        fnameError.innerHTML = "* Please enter the name field";
-        return false;
-    } 
-    else if(lastName == "") {
-        lnameError.innerHTML = "* Please enter the name field";
-        return false;
-    }
-    else if (firstName.length <= 2 || firstName.length >= 10) {
-        fnameError.innerHTML = "* Required character length is between 2 and 10";
-        return false;
-    }
-    else if (lastName.length >= 15) {
-        lnameError.innerHTML = "* Required character length is less than 15";
-        return false;
-    }
-    else if (firstName.match(nameFormat)){
-        fnameError.innerHTML = ""; 
-       // return firstName;
-    } 
-    else if (lastName.match(nameFormat)){
-        lnameError.innerHTML = "";
-      //  return lastName;
+     
+    if (firstName.length >= 3 && firstName.length <= 10 && firstName.match(nameFormat)) {
+        fnameError.innerHTML = "";
     }
     else {
-        fnameError.innerHTML = "* Please enter a valid name";
-        lnameError.innerHTML = "* Please enter a valid name";
+        fnameError.innerHTML = "* Please enter a valid first name of length between 3 and 10";
+        return false;
+    }
+     if (lastName.length >=2 && lastName.length <= 15 && lastName.match(nameFormat)) {
+        lnameError.innerHTML = " ";
+    }
+    else {
+        lnameError.innerHTML = "* Please enter a valid name of length between 2 and 15";
         return false;
     }   
+     
     return [firstName, lastName];  
-}*/
+}
 
 
-const nameFormat = /^[A-Za-z][A-Za-z\s]{3,10}$/;
+/*const nameFormat = /^[A-Za-z][A-Za-z\s]{3,10}$/;
 function firstNameValidate() {
     const firstName = document.getElementById('fname').value;
     const fnameError = document.getElementById('fname-error');
@@ -99,7 +87,7 @@ function lastNameValidate() {
         lnameError.innerHTML = "* Please enter a valid name";
     }     
         
-}
+}*/
 
 function numValidate() {
     const number = document.getElementById('num').value;
@@ -125,7 +113,7 @@ function emailValidate() {
      else {
         emailError.innerHTML = "* Please enter a valid email id";
         return false;
-    }    
+    }  
 }
 
 function subjectValidate() {
@@ -168,4 +156,14 @@ function dobValidate() {
     return dateOfBirth;  
 }
 
+if (localStorage.getItem("currentuser")) {
+    let userName = JSON.parse(localStorage.getItem("currentuser")).name;
+    document.getElementById("fname").value = userName;
+
+    let userMail = JSON.parse(localStorage.getItem("currentuser")).email;
+    document.getElementById("mail").value = userMail;
+
+    
+
+}
 
