@@ -80,7 +80,17 @@
                         </form>
                     </div>
 
-                <i class="fa fa-envelope" id="envelope"></i>
+                <i class="fa fa-envelope" id="envelope">
+                    <div id="myModal" class="modal">
+                        <i class="fa fa-close" id="closeModalBtn" onclick="closeModal()"></i>
+                        <div class="modal-content">
+                          <span id="msgOne" class="msg">Welcome Message<span class="close">&times;</span></span><br>
+                          <span id="msgTwo" class="msg">Discount Alert<span class="close">&times;</span></span><br>
+                          <span id="msgThree" class="msg">Product Announcement<span class="close">&times;</span></span><br>
+                          <span id="msgFour" class="msg">Sale Offers<span class="close">&times;</span></span>
+                        </div>
+                    </div>
+                </i>
             </div>
             <div class="nav-icon">
                 <div class="line1"></div>
@@ -161,6 +171,7 @@
                     <h3>Awards and Recognitions</h3>
                 </div>
                 <div class="awards flex-box">
+                    <div id="page-content-award">
                     <ul class="listing-style listing-style-three flex-box">
                         <li>
                             <img src="images/award1.PNG">
@@ -171,13 +182,14 @@
                             <p>Progress included in three Gartner Magic Quadrants</p>
                         </li>
                     </ul>
+                    </div>
                 </div>
             </section>
             <section class="block testimonial-area ">
                 <div class="title-area">
                     <h3>Trusted by the best in industry</h3>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial" id="page-content-test">
                     <p id="user-msg">"Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Voloptatibus quia, nulla! Maiores et perferendis eaque,
                         exercitationem praesentium nihil."</p>
@@ -238,6 +250,7 @@
         <script src="scripts/register.js"></script>
         <script src="scripts/login.js"></script>
         <script src="scripts/search.js"></script>
+        <script src="scripts/message.js"></script>
 </body>
 </html>
         

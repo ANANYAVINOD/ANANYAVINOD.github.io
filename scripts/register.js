@@ -87,7 +87,6 @@ document.querySelector("#regBtn").addEventListener("click", function () {
   }
 
 
-  
   function register() {
     const usersJson =JSON.parse(localStorage.getItem("user")) || [];
     console.log(usersJson);
@@ -102,11 +101,10 @@ document.querySelector("#regBtn").addEventListener("click", function () {
     console.log("registered");
   }
 
-
-
   if (validate()) {
     register(); 
     document.getElementById("regForm").style.display = "none"; 
     location.reload();
   }
 });
+

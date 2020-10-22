@@ -22,7 +22,7 @@ function login() {
 }
   
   
-  function loginerrorMsg() {
+function loginerrorMsg() {
     let error = document.getElementById("error-message");
     let name = document.getElementById("name").value;
     let pass = document.getElementById("psw").value;
@@ -34,6 +34,6 @@ function login() {
     } else {
       error.innerHTML = "Incorrect Username or Password";
     }
-  }
+}
 
 

@@ -689,8 +689,8 @@ nav .current {
   color: black;
   font-weight: lighter;
   display: block;
-  padding: 0;
-  
+  padding: 4px;
+  border-radius: 20px;
 }
 
 #searchCloseBtn:hover {
@@ -709,7 +709,7 @@ nav .current {
   font-size: 15px;
 }
 
-.highlight {
+#highlight {
   padding: 5px;
   background-color: #eabf25;
 }
@@ -719,7 +719,64 @@ nav .current {
   padding-left: 5px;
 }
 
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 50px; 
+    padding-bottom: 40px;
+    left: 70%;
+    top: 0;
+    width:30%; 
+    /*height: 50%; */
+    overflow: auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px #8a8585;
+    opacity: 0.9;
+}
 
+#closeModalBtn {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  color: black;
+  font-weight: lighter;
+  display: block;
+  padding: 4px;
+  border-radius: 20px;
+  
+}
+
+#closeModalBtn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.msg {
+  display: block;
+  color: black;
+  padding: 15px;
+  background-color: #eabf25;
+  margin: 5px;
+  border: 5px solid white;
+  border-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.close {
+  color: black;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 /*................................................
     FOOTER SECTION
 .................................................*/
