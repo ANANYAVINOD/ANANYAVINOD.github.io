@@ -753,7 +753,7 @@ nav .current {
   cursor: pointer;
 }
 
-.msg {
+.msg li {
   display: block;
   color: black;
   padding: 15px;
