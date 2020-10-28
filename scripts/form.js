@@ -41,54 +41,6 @@ function nameValidate() {
     return [firstName, lastName];  
 }
 
-
-/*const nameFormat = /^[A-Za-z][A-Za-z\s]{3,10}$/;
-function firstNameValidate() {
-    const firstName = document.getElementById('fname').value;
-    const fnameError = document.getElementById('fname-error');
-    if(firstName == "") {
-        fnameError.innerHTML = "* Please fill the first name field";
-        return false;
-    }
-    else if(firstName.length <= 2) {
-        fnameError.innerHTML = "* Please enter a valid name";
-        return false;
-    }
-    else if(firstName.length >= 10) {
-        fnameError.innerHTML = "* First name shouldn't exceed 10 characters"; 
-        return false;
-    }
-    else if (firstName.match(nameFormat)){
-        fnameError.innerHTML = ""; 
-        return firstName;
-    } 
-    else {
-        fnameError.innerHTML = "* Please enter a valid name";
-        return false;
-    }     
-}
-
-function lastNameValidate() {
-    const lastName = document.getElementById('lname').value;
-    const lnameError = document.getElementById('lname-error');
-    if(lastName == "") {
-        lnameError.innerHTML = "* Please fill the last name field";
-        return false;
-    }
-    else if(lastName.length >= 15) {
-        lnameError.innerHTML = "* Last name shouldn't exceed 15 characters";
-        return false; 
-    }
-    else if (lastName.match(nameFormat)){
-        lnameError.innerHTML = ""; 
-        return lastName;
-    } 
-    else {
-        lnameError.innerHTML = "* Please enter a valid name";
-    }     
-        
-}*/
-
 function numValidate() {
     const number = document.getElementById('num').value;
     const numError = document.getElementById('num-error');
@@ -162,8 +114,6 @@ if (localStorage.getItem("currentuser")) {
 
     let userMail = JSON.parse(localStorage.getItem("currentuser")).email;
     document.getElementById("mail").value = userMail;
-
-    
 
 }
 

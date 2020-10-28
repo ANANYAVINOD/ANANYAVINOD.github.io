@@ -1,42 +1,32 @@
-document.querySelector("#envelope").addEventListener("click", function () {
-    document.getElementById("myModal").style.display = "block";  
-});
+class loadMessage {
+  msg() {
+    document.querySelector("#envelope").addEventListener("click", function () {
+      document.getElementById("myModal").style.display = "block";  
+    });
 
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-    location.reload();
+    document.getElementById("closeModalBtn").addEventListener("click", function () {
+      document.getElementById("myModal").style.display = "none";  
+    });
+
+    const messageItems = new XMLHttpRequest();
+    messageItems.open("GET", "../apis/message.json", true);
+    messageItems.send();
+    messageItems.addEventListener("load", message);
+ 
+    function message() {
+      const messagePosts = JSON.parse(messageItems.response);
+      const posts = document.getElementById('posts');
+      for(let i=0; i<messagePosts.length; i++){
+        const listItem = document.createElement('li');
+        const listItemAnchor = document.createElement('a');
+        listItemAnchor.href = messagePosts[i]['href'];
+        listItemAnchor.innerHTML = messagePosts[i]['title'];
+        listItem.appendChild(listItemAnchor);
+        posts.appendChild(listItem);
+      }
+    }
+  }  
 }
 
-let close = document.getElementsByClassName("close");
+export let loadMessages = new loadMessage();
 
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    let div = this.parentElement;
-    setTimeout(function(){ div.style.display = "none"; }, 300);
-  }
-}
-  
-console.log(Notification.permission);
-
-if (Notification.permission === "granted") {
-    alert("Welocome");
-}
-else if (Notification.permission !== "denied") {
-    Notification.requestPermission().then(permission => {
-        if(permission === "granted") {
-            document.getElementById("msgOne").addEventListener("click", function () {
-                alert("Welcome to A Solutions");
-                console.log(permission);
-            });
-            document.getElementById("msgTwo").addEventListener("click", function () {
-                alert("No discounts available currently");
-            });
-            document.getElementById("msgThree").addEventListener("click", function () {
-                alert("Subscribe to hear product announcements");
-            });
-            document.getElementById("msgFour").addEventListener("click", function () {
-                alert("Sale offers coming soon");
-            });            
-        }
-    });   
-}

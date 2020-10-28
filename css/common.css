@@ -732,7 +732,7 @@ nav .current {
     overflow: auto;
     background-color: white;
     box-shadow: 0px 0px 10px #8a8585;
-    opacity: 0.9;
+    /*opacity: 0.9; */
 }
 
 #closeModalBtn {
