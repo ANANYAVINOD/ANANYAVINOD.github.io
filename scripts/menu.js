@@ -32,7 +32,7 @@ class loadMenu {
     }
    
     document.getElementById("loginForm").addEventListener("click", function () {
-        document.getElementById("myForm").style.display = "block";  
+       document.getElementById("myForm").style.display = "block";  
     });
 
     document.getElementById("closeBtn").addEventListener("click", function () {
@@ -40,13 +40,14 @@ class loadMenu {
         document.getElementById("regForm").style.display = "none";   
     });
 
-    document.getElementById("loginForm").addEventListener("click", function () {
-        document.getElementById("myForm").style.display = "block";  
-    });
-
     document.getElementById("registerForm").addEventListener("click", function () {
         document.getElementById("regForm").style.display = "block";  
     });
+
+    document.getElementById("nav-bar").addEventListener("click", function(){
+        document.getElementById("menu-items").classList.toggle("showMenu");
+    })
+
   }
 }
 //let m = new loadMenu();

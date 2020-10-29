@@ -1,55 +1,57 @@
-class loginValidation {
-  #loginButton = document.getElementById("login-button");
-  login(){
-    this.#loginButton.addEventListener("click", function()  {
-    
-      let uname = document.getElementById("name").value;
-      let password = document.getElementById("psw").value;
-      let userList = localStorage.getItem("user");
-      let allUsers = JSON.parse(userList);
-  
-      let newAr = allUsers.filter(validate);
-      console.log(newAr);
- 
-      function validate() {
-        allUsers.forEach(element => {
-          if (uname == element.username && password == element.password) {
-            console.log("logged in " + element.username);
-            let currentUser = {
-              name: element.username,
-              email: element.email
-            };
-            localStorage.setItem("currentuser", JSON.stringify(currentUser));
-        
-            document.getElementById("myForm").style.display = "none"; 
-            location.reload();
-            return;
-          }
-          loginerrorMsg();    
-        }); 
-      }
-    
-    function loginerrorMsg() {
-      let error = document.getElementById("error-message");
-      let name = document.getElementById("name").value;
-      let pass = document.getElementById("psw").value;
-      if (name == "") {
-        error.innerHTML = "Invalid Username";
-      }
-      else if (pass == "") {
-        error.innerHTML = "Invalid Password";
-      } else {
-        error.innerHTML = "Incorrect Username or Password";
-      }
+class loginUser {
+
+    constructor() {
+      this.button =  document.getElementById("login-button");;
     }
-  });
-  }
-}
+    
+    loginerrorMsg(name, pass) {
+        const error = document.getElementById("error-message");
+        if (name == "") {
+          error.innerHTML = "Invalid Username";
+        }
+        else if (pass == "") {
+          error.innerHTML = "Invalid Password";
+        }else {
+          error.innerHTML = "Incorrect Username or Password";
+        }
+    }
 
-//let c = new loginValidation();
-//c.login();
+    userData() {
+        const userList = localStorage.getItem("user");
+        const allUser = JSON.parse(userList);
+        return allUser ;
+    }
 
-export let loginData = new loginValidation();
+    userValidate(){
+        const users = loginUser.prototype.userData();
+        users.forEach(element => {
+            const uname = document.getElementById("name").value;
+            const passw = document.getElementById("psw").value;
+            if (uname == element.username && passw == element.password) {
+              console.log("logged in " + element.username);
+              let currentUser = {
+                name: element.username,
+                email: element.email
+              };
+              localStorage.setItem("currentuser", JSON.stringify(currentUser));
+          
+              document.getElementById("myForm").style.display = "none"; 
+              location.reload();
+              return;
+            }
+            loginUser.prototype.loginerrorMsg(uname , passw);
+            return;       
+        }); 
+    }
+
+    login()  { 
+      this.button.addEventListener("click", this.userValidate); 
+    }
+}   
+
+export const loginAuthentication = new loginUser();
 
 
 
+
+    

@@ -524,12 +524,13 @@ header {
 nav li a:hover {
     background-color: black;
     color: white;
+    border: 2px solid white;
 }
 
 nav .current {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
 }
 
 .menu-bar  li a {
@@ -540,6 +541,33 @@ nav .current {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
+}
+
+.menuList {
+    display: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 10px;
+    float: right;
+}
+
+.menuList li a {
+  color: #000;
+  padding: 10px;
+}
+
+.menuList li a:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+.menuList .current {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
 }
 
 .icon-bar i {
@@ -595,6 +623,10 @@ nav .current {
 
 .show {
   display: block;
+}
+
+.showMenu {
+  display: flex;
 }
 
 /* The popup form - hidden by default */
@@ -826,6 +858,9 @@ nav .current {
     .nav-icon {
       display: none;
     }
+    .menuList {
+      display: none;
+    }
 }
   
   @media (max-width:990px) {
@@ -838,6 +873,10 @@ nav .current {
     }
     .menu-bar {
       display: none;
+      flex-direction: column;
+    }
+    .content {
+      margin-top: 100px;
     }
     .footer .flex-box > li {
         padding-left: 30px; 

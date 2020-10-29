@@ -23,6 +23,8 @@ class searchContent {
             searchWord = searchWord.toString();
             homeContent = searchWord;
             highlightWord(homeContent);
+            //document.getElementById("search-bar").value=" ";
+            //console.log(textWord);  
           }
           searchWord = "";
         }
@@ -30,6 +32,7 @@ class searchContent {
           let countObj = document.getElementById("count-display");
           countObj.remove();
           location.reload();
+    
         }
       });
     },
@@ -38,6 +41,7 @@ class searchContent {
   
     function highlightWord(searchWord) { 
       let text = document.getElementById("search-bar").value;
+     // console.log(text);
       if (text.length >= 3) {
         let newsearch = searchWord;
         let pattern = new RegExp("(" + text + ")", "g");
@@ -76,7 +80,6 @@ class searchContent {
         searchedTag.innerHTML = searchWord;
         document.getElementById("count-display").innerHTML = "No results found";
       }
-  
     }
   }
 }

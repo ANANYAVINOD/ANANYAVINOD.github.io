@@ -15,7 +15,7 @@
         <div class="container flex-box ">
             <img src="../images/logo.png" alt="A Solutions" id="logoImage">
             <nav>
-                <ul class= "menu-bar flex-box">
+                <ul class= "menu-bar flex-box" id="menu-list">
                    <li><a href="../index.html">Home</a></li>
                     <li><a href="../pages/about.html">About</a></li>
                     <li><a class="current" href="../pages/services.html">Services</a></li>
@@ -27,7 +27,7 @@
                 <i class="fa fa-search" id="search"></i>
                 <i class="fa fa-user" id="dropbtn">
                     <div id="Dropdown" class="dropdown-content">
-                       <p>Welcome back <button type="submit" class="btn" onclick="openForm()">Login</button></p> 
+                       <p>Welcome back <button type="submit" class="btn">Login</button></p> 
                     </div>
                     <div id="loggedInDropdown" class="dropdown-content">
                         <span id="name-display"></span><span></span><br>
@@ -36,7 +36,7 @@
                 </i>
                     <div class="form-popup" id="myForm">
                         <form class="form-container">
-                            <i class="fa fa-close" id="closeBtn" onclick="closeForm()"></i>
+                            <i class="fa fa-close" id="closeBtn"></i>
                       
                           <label for="name">Username</label>
                           <input type="text" placeholder="Enter Username" name="name" id="name" required>
@@ -45,17 +45,24 @@
                           <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
                           
                           <span class="error-message" id="error-message"></span>
-                          <button type="button" id="login-button" class="btn" onclick="login()">Login</button>
+                          <button type="button" id="login-button" class="btn">Login</button>
                         </form>
                     </div>
                 <i class="fa fa-envelope" id="envelope"></i>
             </div>  
-            <div class="nav-icon">
+            <div class="nav-icon" id="nav-bar">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>  
         </div>
+        <ul class= "menuList" id="menu-items">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/about.html">About</a></li>
+            <li><a class="current" href="../pages/services.html">Services</a></li>
+            <li><a href="../pages/training.html">Training</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
     </header>
     <main>
         <div class="banner">
@@ -159,7 +166,6 @@
             </div>
         </div>
     </footer> 
-    <script src="../scripts/login.js"></script>
-    <script src="../scripts/menu.js"></script>  
+    <script type="module" src="../scripts/main.js"></script>  
 </body>
 </html>

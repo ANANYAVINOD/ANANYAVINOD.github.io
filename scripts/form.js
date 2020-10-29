@@ -27,14 +27,14 @@ function nameValidate() {
         fnameError.innerHTML = "";
     }
     else {
-        fnameError.innerHTML = "* Please enter a valid first name of length between 3 and 10";
+        fnameError.innerHTML = "* Enter valid first name of length between 3 and 10";
         return false;
     }
      if (lastName.length >=2 && lastName.length <= 15 && lastName.match(nameFormat)) {
         lnameError.innerHTML = " ";
     }
     else {
-        lnameError.innerHTML = "* Please enter a valid name of length between 2 and 15";
+        lnameError.innerHTML = "* Enter valid name of length between 2 and 15";
         return false;
     }   
      
@@ -49,7 +49,7 @@ function numValidate() {
         numError.innerHTML = " ";
         return number;
     } else {
-        numError.innerHTML = "* Enter a valid phone number with 10 digits";
+        numError.innerHTML = "* Enter valid phone number with 10 digits";
         return false;
     }
 }
@@ -63,7 +63,7 @@ function emailValidate() {
         return email;
     }
      else {
-        emailError.innerHTML = "* Please enter a valid email id";
+        emailError.innerHTML = "* Enter valid email id";
         return false;
     }  
 }
@@ -72,7 +72,7 @@ function subjectValidate() {
     const sub = document.getElementById('subject').value;
     const subError = document.getElementById('subject-error');
     if (sub == "" || sub.length < 3) {
-        subError.innerHTML = "* Please enter a valid subject";
+        subError.innerHTML = "* Enter valid subject";
         return false;
     }
     else {
@@ -90,7 +90,7 @@ function dobValidate() {
     let dyear = DOB.getFullYear();
     let age = tyear - dyear;
     if (dateOfBirth == "") {
-        dobError.innerHTML = "* Please enter the date of birth";
+        dobError.innerHTML = "* Enter date of birth";
         return false;
     } else  {
         if (DOB > today) {
