@@ -36,9 +36,12 @@ class loadMenu {
     });
 
     document.getElementById("closeBtn").addEventListener("click", function () {
-        document.getElementById("myForm").style.display = "none";
-        document.getElementById("regForm").style.display = "none";   
+        document.getElementById("myForm").style.display = "none";   
     });
+
+    document.getElementById("closeregBtn").addEventListener("click", function() {
+        document.getElementById("regForm").style.display = "none";
+    })
 
     document.getElementById("registerForm").addEventListener("click", function () {
         document.getElementById("regForm").style.display = "block";  
@@ -46,8 +49,7 @@ class loadMenu {
 
     document.getElementById("nav-bar").addEventListener("click", function(){
         document.getElementById("menu-items").classList.toggle("showMenu");
-    })
-
+    });
   }
 }
 //let m = new loadMenu();

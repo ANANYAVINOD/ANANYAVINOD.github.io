@@ -693,6 +693,16 @@ nav .current {
   display: block;
 }
 
+#closeregBtn {
+  position: absolute;
+  top: 1px;
+  right: -28px;
+  background-color: white;
+  color: black;
+  font-weight: normal;
+  display: block;
+}
+
 #logout-button {
   margin-top: 10px;
 }

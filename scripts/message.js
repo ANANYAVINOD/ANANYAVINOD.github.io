@@ -1,13 +1,11 @@
 class loadMessage {
   msg() {
-    document.querySelector("#envelope").addEventListener("click", function () {
-      document.getElementById("myModal").style.display = "block";  
-    });
-
     document.getElementById("closeModalBtn").addEventListener("click", function () {
       document.getElementById("myModal").style.display = "none";  
     });
-
+    document.querySelector("#envelope").addEventListener("click", function () {
+      document.getElementById("myModal").style.display = "block";  
+    });
     const messageItems = new XMLHttpRequest();
     messageItems.open("GET", "../apis/message.json", true);
     messageItems.send();
