@@ -820,7 +820,7 @@ nav .current {
   cursor: pointer;
 }
 
-.deleteMsg {
+.closeMsg {
   font-size: large;
   font-weight: bold;
   float: right;

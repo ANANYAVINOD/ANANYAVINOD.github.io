@@ -1,7 +1,8 @@
 class loadMessage {
   msg() {
     document.getElementById("closeModalBtn").addEventListener("click", function () {
-      document.getElementById("myModal").style.display = "none";  
+      document.getElementById("myModal").style.display = "none"; 
+      //location.reload(); 
     });
     document.getElementById("envelope").addEventListener("click", function () {
       document.getElementById("myModal").style.display = "block";  
@@ -18,13 +19,17 @@ class loadMessage {
       for(let i=0; i<messagePosts.length; i++){
         const listItem = document.createElement('li');
         const listItemAnchor = document.createElement('a');
-        listItemAnchor.href = messagePosts[i]['href'];
-        listItemAnchor.innerHTML = messagePosts[i]['title'] + "<span class='deleteMsg'>" + "x" + "</span>";
+        //listItemAnchor.href = messagePosts[i]['href'];
+        listItemAnchor.innerHTML = messagePosts[i]['title'] + "<span class='closeMsg'>" + "x" + "</span>";
         listItem.appendChild(listItemAnchor);
         posts.appendChild(listItem);
-        console.log(listItem);
+        //console.log(listItem);
+        const btn = document.getElementsByClassName("closeMsg");
+        //console.log(btn);
+        btn[i].addEventListener("click" , function(){
+          listItem.remove();
+        });
       }
-      
     }
   }  
 }
