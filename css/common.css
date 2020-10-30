@@ -751,7 +751,7 @@ nav .current {
   font-size: 15px;
 }
 
-#highlight {
+.highlight {
   padding: 5px;
   background-color: #eabf25;
 }
@@ -818,6 +818,12 @@ nav .current {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.deleteMsg {
+  font-size: large;
+  font-weight: bold;
+  float: right;
 }
 /*................................................
     FOOTER SECTION

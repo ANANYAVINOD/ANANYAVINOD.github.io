@@ -3,9 +3,10 @@ class loadMessage {
     document.getElementById("closeModalBtn").addEventListener("click", function () {
       document.getElementById("myModal").style.display = "none";  
     });
-    document.querySelector("#envelope").addEventListener("click", function () {
+    document.getElementById("envelope").addEventListener("click", function () {
       document.getElementById("myModal").style.display = "block";  
     });
+  
     const messageItems = new XMLHttpRequest();
     messageItems.open("GET", "../apis/message.json", true);
     messageItems.send();
@@ -18,10 +19,12 @@ class loadMessage {
         const listItem = document.createElement('li');
         const listItemAnchor = document.createElement('a');
         listItemAnchor.href = messagePosts[i]['href'];
-        listItemAnchor.innerHTML = messagePosts[i]['title'];
+        listItemAnchor.innerHTML = messagePosts[i]['title'] + "<span class='deleteMsg'>" + "x" + "</span>";
         listItem.appendChild(listItemAnchor);
         posts.appendChild(listItem);
+        console.log(listItem);
       }
+      
     }
   }  
 }

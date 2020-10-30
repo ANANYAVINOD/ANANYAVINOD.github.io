@@ -12,27 +12,26 @@ class searchContent {
     document.addEventListener("DOMContentLoaded", function () {
       let homeContent = "";
       let searchWord = "";
+      let countWord = document.getElementsByClassName('highlight');
       document.getElementById("search-bar").addEventListener("keydown", function (e) {
         if (searchWord == "") {
           searchWord = document.getElementsByTagName("p");
         }
         if (e.key === "Enter") {
-          for (let values of searchWord) {
-            searchedTag = values;
-            searchWord = values.innerHTML;
-            searchWord = searchWord.toString();
-            homeContent = searchWord;
-            highlightWord(homeContent);
-            //document.getElementById("search-bar").value=" ";
-            //console.log(textWord);  
-          }
+          if(countWord.length == 0){
+            for (let values of searchWord) {
+              searchedTag = values;
+              searchWord = values.innerHTML;
+              homeContent = searchWord;
+              highlightWord(homeContent);   
+            }
           searchWord = "";
+          }
         }
         else if (e.key === "Backspace"){
           let countObj = document.getElementById("count-display");
-          countObj.remove();
-          location.reload();
-    
+          countObj.remove(); 
+          //location.reload();
         }
       });
     },
@@ -41,40 +40,16 @@ class searchContent {
   
     function highlightWord(searchWord) { 
       let text = document.getElementById("search-bar").value;
-     // console.log(text);
       if (text.length >= 3) {
         let newsearch = searchWord;
         let pattern = new RegExp("(" + text + ")", "g");
         let newText = newsearch.replace(
           pattern,
-          "<span id='highlight'>" + text + "</span>"
-        );
+          "<span class='highlight'>" + text + "</span>"
+        ); 
+        let textcount = document.getElementsByClassName('highlight').length;
+        document.getElementById("count-display").innerHTML = textcount + " " + "results found";
         searchedTag.innerHTML = newText;
-        let content = document.getElementById("page-content"); 
-        let str = content.textContent;
-        let word = str.split(" ");
-   
-        let contentFeature = document.getElementById("page-content-feature"); 
-        let strFeature = contentFeature.textContent;
-        let wordFeature = strFeature.split(" ");
-
-        let contentAward = document.getElementById("page-content-award"); 
-        let strAward = contentAward.textContent;
-        let wordAward = strAward.split(" ");
-    
-        let contentTest = document.getElementById("page-content-test"); 
-        let strTest = contentTest.textContent;
-        let wordTest = strTest.split(" ");
-
-        let totalWords = [...word, ...wordFeature, ...wordAward, ...wordTest];
-        let totalCount = 0;
-        totalWords.forEach(element => {
-          if(element.match(text)){
-            totalCount ++;
-          }
-          document.getElementById("count-display").innerHTML = totalCount + " " + "results found";
-        });
-
       }   
       else {
         searchedTag.innerHTML = searchWord;

@@ -1,7 +1,7 @@
 class loginUser {
 
     constructor() {
-      this.button =  document.getElementById("login-button");;
+      this.button =  document.getElementById("login-button");
     }
     
     loginerrorMsg(name, pass) {

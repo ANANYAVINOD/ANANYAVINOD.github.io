@@ -27,7 +27,7 @@ class loadMenu {
         });
 
         document.getElementById("search").style.display ="none";
-        document.getElementById("search").style.display ="none";
+        document.getElementById("envelope").style.display ="none";
         document.getElementById("dropbtn").style.display ="flex";
     }
    
