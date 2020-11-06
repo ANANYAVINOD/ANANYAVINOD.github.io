@@ -14,7 +14,6 @@ class registerValidate {
             }  
         }); 
     }
-
     registerUser() {
         let name = document.getElementById("username").value;
         let mailId = document.getElementById("mail").value;
