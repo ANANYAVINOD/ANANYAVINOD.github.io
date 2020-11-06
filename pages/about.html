@@ -15,7 +15,7 @@
         <div class="container flex-box ">
             <img src="../images/logo.png" alt="A Solutions" id="logoImage">
             <nav>
-                <ul class= "menu-bar flex-box">
+                <ul class= "menu-bar flex-box" id="menu-list">
                    <li><a href="../index.html">Home</a></li>
                     <li><a class="current" href="../pages/about.html">About</a></li>
                     <li><a href="../pages/services.html">Services</a></li>
@@ -24,16 +24,46 @@
                 </ul> 
             </nav>
             <div class="icon-bar flex-box">
-                <i class="fa fa-search"></i>
-                <i class="fa fa-user" ></i>
-                <i class="fa fa-envelope"></i>
+                <i class="fa fa-search" id="search"></i>
+                <i class="fa fa-user" id="dropbtn">
+                    <div id="Dropdown" class="dropdown-content">
+                       <p>Welcome back <button type="submit" class="btn">Login</button></p> 
+                    </div>
+                    <div id="loggedInDropdown" class="dropdown-content">
+                        <span id="name-display"></span><span></span><br>
+                        <span id="logout"> <button id="logout-button" class="btn" >Logout</button> </span>
+                    </div>
+                </i>
+                    <div class="form-popup" id="myForm">
+                        <form class="form-container">
+                            <i class="fa fa-close" id="closeBtn"></i>
+                      
+                          <label for="name">Username</label>
+                          <input type="text" placeholder="Enter Username" name="name" id="name" required>
+                      
+                          <label for="psw">Password</label>
+                          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                          
+                          <span class="error-message" id="error-message"></span>
+                          <button type="button" id="login-button" class="btn">Login</button>
+                        </form>
+                    </div>
+
+                <i class="fa fa-envelope" id="envelope"></i>
             </div>  
-            <div class="nav-icon">
+            <div class="nav-icon" id="nav-bar">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>  
         </div>
+        <ul class= "menuList" id="menu-items">
+            <li><a href="../index.html">Home</a></li>
+            <li><a class="current" href="../pages/about.html">About</a></li>
+            <li><a href="../pages/services.html">Services</a></li>
+            <li><a href="../pages/training.html">Training</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
     </header>
     <main>
         <div class="banner">
@@ -76,9 +106,9 @@
                     <span class="secondary">CEO, TECH</span>
                 </div>
                 <div class="testimonial-one">
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    <span>"Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Voloptatibus quia, nulla! Maiores et perferendis eaque,
-                        exercitationem praesentium nihil."</p>
+                        exercitationem praesentium nihil."</span>
                     <h4>Mathew Hewbert</h4>
                     <span class="secondary">MARKETING HEAD, SAP SOLUTIONS</span>
                 </div>
@@ -132,6 +162,7 @@
            <h4>Copyright @ 2020 ASolutions, All Rights Reserved</h4>
         </div>
     </div>
-</footer>   
+</footer> 
+<script type="module" src="../scripts/main.js"></script>
 </body>
 </html>

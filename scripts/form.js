@@ -1,7 +1,8 @@
 document.querySelector("#contact-button").addEventListener("click", function (event) {
     event.preventDefault();
-    const firstName = firstNameValidate();
-    const lastName = lastNameValidate();
+    const name = nameValidate();
+    const firstName = name[0];
+    const lastName = name[1];
     const phoneNo = numValidate();
     const emailId = emailValidate();
     const subj = subjectValidate();
@@ -15,90 +16,29 @@ document.querySelector("#contact-button").addEventListener("click", function (ev
 });
 
 
-/*function nameValidate() {
+function nameValidate() {
     const firstName = document.getElementById('fname').value;
     const lastName = document.getElementById('lname').value;
     const fnameError = document.getElementById('fname-error');
     const lnameError = document.getElementById('lname-error');
     const nameFormat = /^[A-Za-z][A-Za-z\s]{3,10}$/;
-    if(firstName == "") {
-        fnameError.innerHTML = "* Please enter the name field";
-        return false;
-    } 
-    else if(lastName == "") {
-        lnameError.innerHTML = "* Please enter the name field";
-        return false;
-    }
-    else if (firstName.length <= 2 || firstName.length >= 10) {
-        fnameError.innerHTML = "* Required character length is between 2 and 10";
-        return false;
-    }
-    else if (lastName.length >= 15) {
-        lnameError.innerHTML = "* Required character length is less than 15";
-        return false;
-    }
-    else if (firstName.match(nameFormat)){
-        fnameError.innerHTML = ""; 
-       // return firstName;
-    } 
-    else if (lastName.match(nameFormat)){
-        lnameError.innerHTML = "";
-      //  return lastName;
+     
+    if (firstName.length >= 3 && firstName.length <= 10 && firstName.match(nameFormat)) {
+        fnameError.innerHTML = "";
     }
     else {
-        fnameError.innerHTML = "* Please enter a valid name";
-        lnameError.innerHTML = "* Please enter a valid name";
+        fnameError.innerHTML = "* Enter valid first name of length between 3 and 10";
+        return false;
+    }
+     if (lastName.length >=2 && lastName.length <= 15 && lastName.match(nameFormat)) {
+        lnameError.innerHTML = " ";
+    }
+    else {
+        lnameError.innerHTML = "* Enter valid name of length between 2 and 15";
         return false;
     }   
+     
     return [firstName, lastName];  
-}*/
-
-
-const nameFormat = /^[A-Za-z][A-Za-z\s]{3,10}$/;
-function firstNameValidate() {
-    const firstName = document.getElementById('fname').value;
-    const fnameError = document.getElementById('fname-error');
-    if(firstName == "") {
-        fnameError.innerHTML = "* Please fill the first name field";
-        return false;
-    }
-    else if(firstName.length <= 2) {
-        fnameError.innerHTML = "* Please enter a valid name";
-        return false;
-    }
-    else if(firstName.length >= 10) {
-        fnameError.innerHTML = "* First name shouldn't exceed 10 characters"; 
-        return false;
-    }
-    else if (firstName.match(nameFormat)){
-        fnameError.innerHTML = ""; 
-        return firstName;
-    } 
-    else {
-        fnameError.innerHTML = "* Please enter a valid name";
-        return false;
-    }     
-}
-
-function lastNameValidate() {
-    const lastName = document.getElementById('lname').value;
-    const lnameError = document.getElementById('lname-error');
-    if(lastName == "") {
-        lnameError.innerHTML = "* Please fill the last name field";
-        return false;
-    }
-    else if(lastName.length >= 15) {
-        lnameError.innerHTML = "* Last name shouldn't exceed 15 characters";
-        return false; 
-    }
-    else if (lastName.match(nameFormat)){
-        lnameError.innerHTML = ""; 
-        return lastName;
-    } 
-    else {
-        lnameError.innerHTML = "* Please enter a valid name";
-    }     
-        
 }
 
 function numValidate() {
@@ -109,7 +49,7 @@ function numValidate() {
         numError.innerHTML = " ";
         return number;
     } else {
-        numError.innerHTML = "* Enter a valid phone number with 10 digits";
+        numError.innerHTML = "* Enter valid phone number with 10 digits";
         return false;
     }
 }
@@ -123,16 +63,16 @@ function emailValidate() {
         return email;
     }
      else {
-        emailError.innerHTML = "* Please enter a valid email id";
+        emailError.innerHTML = "* Enter valid email id";
         return false;
-    }    
+    }  
 }
 
 function subjectValidate() {
     const sub = document.getElementById('subject').value;
     const subError = document.getElementById('subject-error');
     if (sub == "" || sub.length < 3) {
-        subError.innerHTML = "* Please enter a valid subject";
+        subError.innerHTML = "* Enter valid subject";
         return false;
     }
     else {
@@ -150,7 +90,7 @@ function dobValidate() {
     let dyear = DOB.getFullYear();
     let age = tyear - dyear;
     if (dateOfBirth == "") {
-        dobError.innerHTML = "* Please enter the date of birth";
+        dobError.innerHTML = "* Enter date of birth";
         return false;
     } else  {
         if (DOB > today) {
@@ -168,4 +108,12 @@ function dobValidate() {
     return dateOfBirth;  
 }
 
+if (localStorage.getItem("currentuser")) {
+    let userName = JSON.parse(localStorage.getItem("currentuser")).name;
+    document.getElementById("fname").value = userName;
+
+    let userMail = JSON.parse(localStorage.getItem("currentuser")).email;
+    document.getElementById("mail").value = userMail;
+
+}
 
