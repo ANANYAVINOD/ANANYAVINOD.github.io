@@ -4,253 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Solutions</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/common.css">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="icon" href="./images/logo.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header>
-        <div class="container flex-box ">
-            <img src="images/logo.png" alt="A Solutions" id="logoImage">
-            <nav>
-                <ul class= "menu-bar flex-box" id="menu-list">
-                   <li><a class="current" href="index.html">Home</a></li>
-                    <li><a href="pages/about.html">About</a></li>
-                    <li><a href="pages/services.html">Services</a></li>
-                    <li><a href="pages/training.html">Training</a></li>
-                    <li><a href="pages/contact.html">Contact</a></li>
-                </ul> 
-            </nav>  
-            <div class="icon-bar flex-box">
-                <i class="fa fa-search" id="search">
-                    <div id="searchDropdown" class="dropdown-search">
-                        <i class="fa fa-close" id="searchCloseBtn"></i>
-                        <input type="search" placeholder="Enter search text" id="search-bar" autocomplete="off"><br>
-                        <span id="count-display"></span>
-                    </div>
-                </i>
-                <i class="fa fa-user" id="dropbtn">
-                    <div id="Dropdown" class="dropdown-content">
-                       <p>Welcome back <button type="submit" class="btn" id="loginForm">Login</button></p> 
-                        <p>New Here? <button type="button" class="btn" id="registerForm">Register</button></p>
-                    </div>
-                    <div id="loggedInDropdown" class="dropdown-content">
-                        <span id="name-display"></span><span></span><br>
-                        <span id="logout"> <button id="logout-button" class="btn" >Logout</button> </span>
-                    </div>
-                </i>
-                    <div class="form-popup" id="myForm">
-                        <form class="form-container">
-                            <i class="fa fa-close" id="closeBtn"></i>
-                      
-                          <label for="name">Username</label>
-                          <input type="text" placeholder="Enter Username" name="name" id="name" required>
-                      
-                          <label for="psw">Password</label>
-                          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-                          
-                          <span class="error-message" id="error-message"></span>
-                          <button type="button" id="login-button" class="btn">Login</button>
-                        </form>
-                    </div>
-
-                    <div class="form-popup" id="regForm">
-                        <form class="form-container">
-                            <i class="fa fa-close" id="closeregBtn"></i>
-                      
-                          <label for="name">Username</label>
-                          <input type="text" placeholder="Enter Username" name="name" id="username"  required>
-                          <span class="error-text" id="error-name"></span>
-
-                          <label for="email">Email</label>
-                          <input type="email" placeholder="Enter Email Address" name="mail" id="mail" required>
-                          <span class="error-text" id="error-mail"></span>
-                      
-                          <label for="psw">Password</label>
-                          <input type="password" placeholder="Enter Password" name="psw" id="password" required>
-                          <span class="error-text" id="error-pass"></span>
-
-                          <label for="cpsw">Confirm Password</label>
-                          <input type="password" placeholder="Enter Password" name="psw" id="cpassword" required>
-                          <span class="error-text" id="error-cpass"></span>
-                      
-                          <button type="button" class="btn" id="regBtn">Register</button>
-                        </form>
-                    </div>
-
-                <i class="fa fa-envelope" id="envelope"></i>
-                    <div id="myModal" class="modal">
-                        <i class="fa fa-close" id="closeModalBtn"></i>
-                        <div class="modal-content">
-                            <ul id="posts" class="msg"></ul>
-                        </div>
-                    </div>
+        <div class="container flex-box">
+            <div class="sec-left flex-box">
+                <img src="./images/logo.png" alt="logo">
+                <h1>Project Management System</h1>
             </div>
-            <div class="nav-icon" id="nav-bar">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>  
+            <div class="sec-right flex-box">
+                <span class="name-display">Welcome, <i class="fa fa-user"></i> User</span>
+                <button id="logout-btn" type="submit" value="Logout">Logout <i class="fa fa-sign-out"></i></button>
+            </div>
         </div>
-        <ul class= "menuList" id="menu-items">
-            <li><a class="current" href="index.html">Home</a></li>
-            <li><a href="pages/about.html">About</a></li>
-            <li><a href="pages/services.html">Services</a></li>
-            <li><a href="pages/training.html">Training</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
-        </ul>
     </header>
     <main>
-        <div class="banner">
-            <div class="content flex-box">
-                <div class="panel-left">
-                    <img src="images/about.png" alt="About">
-                </div>
-                <div class="panel-right" id="page-content">
-                    <h2>About A Solutions</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 
-                    1500s, when an unknown printer took a gallery of type and scrambled it to make.</p> 
+        <div class="main-container">
+            <button type="button" id="newBtn">+ New</button>    
+
+            <!-- The Modal -->
+            <div id="forms-modal" class="modal">
+
+                <!-- PROJECT FORMS -->
+                <div class="modal-content" id="modal-content-project">
+                    <span class="modal-header">
+                        <h3 id='project-form-title'>Add Project</h3> 
+                    </span>
+                    <form class="modal-body" id="project-form">
+
+                        <div class="form-feild">
+                            <label for="project-name"> Project Name </label><br>
+                            <input type="text" name="project-name" id="project-name" class="form-input" maxlength="200" autocomplete="off">
+                            <span id="pname-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="client-name"> Client Name </label><br>
+                            <input type="text" name="client-name" id="client-name" class="form-input" maxlength="200" autocomplete="off">
+                            <span id="cname-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="project-manager"> Project Manager </label><br>
+                            <input type="text" name="project-manager" id="project-manager" class="form-input" autocomplete="off">
+                            <span id="pmname-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="start-date">Start Date</label><br>
+                            <input type="date" name="start-date" id="start-date" class="form-input">
+                            <span id="start-date-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="end-date">End Date</label><br>
+                            <input type="date" name="end-date" id="end-date" class="form-input">
+                            <span id="end-date-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="status">Progress level</label><br>
+                            <input type="number" name="status" id="status" class="form-input">
+                            <span id="status-error" class="error-msg"></span>
+                        </div>
+                
+                        <div class="form-feild">
+                            <label for="technologies">Technologies</label><br>
+                            <input type="text" name="technologies" id="technologies" class="form-input">
+                            <span id="technologies-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-feild">
+                            <label for="description">Project Description</label><br>
+                            <textarea name="description" id="pro-description" class="form-input" rows="6" maxlength="300"></textarea>
+                            <span id="description-error" class="error-msg"></span>
+                        </div>
+
+                        <label for="buttons" class="pro-btn">
+                            <input type="button" value="Cancel" class="cancel-project" id="cancel">
+                            <input type="submit" value="Add Project" class="add-project" id="submit-project-button">
+                            <input type="submit" value="Save Updates" class="edit-project" id="edit-project-button">
+                        </label>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="main-content">
-            <section class="block block-training">
-                <div class="title-area">
-                    <h3>Trainings Offered</h3>
-                </div>
-                <ul class="listing-style listing-style-one flex-box">
-                    <li>
-                        <img src="images/training1.PNG" alt="webComponent">
-                    </li>
-                    <li>
-                        <img src="images/training2.PNG" alt="desktopComponent">
-                    </li>
-                    <li>
-                        <img src="images/training3.PNG" alt="mobileComponent">
-                    </li>
-                    <li>
-                        <img src="images/training4.PNG" alt="reporting">
-                    </li>
-                    <li>
-                        <img src="images/training5.PNG" alt="testing">
-                    </li>
-                    <li>
-                        <img src="images/training6.PNG" alt="design">
-                    </li>
+            
+            <div class="tab flex-box" id="tab">
+                <ul class="menu-bar flex-box" id="menu">
+                    <li class="menu"><a id="active" href="index.html">Details</a></li>
+                    <li class="menu"><a href="resources.html">Resources</a></li>
+                    <li class="menu"><a href="invoice.html">Invoice</a></li>
                 </ul>
-            </section>
-            <section class="block block-features">
-                <div class="title-area">
-                    <h3>Features</h3>
+                <button class="editBtn" id="edit" type="submit">Edit <i class="fa fa-pencil editPencil"></i> </button>
+            </div>
+
+            <div class="content flex-box" id="content">
+                <div class="project-bar flex-box">
+                <div class="pro-flex"><h2>Recent Projects</h2>
+                    <ul class="project-list" id="prolists">
+                    </ul></div> 
                 </div>
-                <div id="page-content-feature">
-                <ul class="listing-style listing-style-two flex-box">
-                    <li>
-                        <p>Feature-rich UI components for all .NET and JavaScript frameworks.</p>
-                    </li>
-                    <li>
-                       <p>Professionally designed components and themes for beautiful, engaging and always modern apps.</p> 
-                    </li>
-                    <li>
-                        <p>Industry leading support delivered from the engineers who built the product.</p>
-                    </li>
-                    <li>
-                        <p>On demand technical product training.</p>
-                    </li>
-                    <li>
-                        <p>Performance, accessibility, localization and security guaranteed.</p>
-                    </li>
-                    <li>
-                        <p>Continuous innovation to cover your needs today and tomorrow.</p>
-                    </li>
-                </ul>
-                </div>
-            </section>
-            <section class="block block-award">
-                <div class="title-area">
-                    <h3>Awards and Recognitions</h3>
-                </div>
-                <div class="awards flex-box">
-                    <div id="page-content-award">
-                    <ul class="listing-style listing-style-three flex-box">
-                        <li>
-                            <img src="images/award1.PNG">
-                            <p>A Solutions has won two Forbes Business Awards</p>
-                        </li>
-                        <li>
-                            <img src="images/award2.PNG">
-                            <p>Progress included in three Gartner Magic Quadrants</p>
-                        </li>
-                    </ul>
+                <div class="project-details">
+                    <div class="project-inner flex-box">
+                        <div class="left-sec">
+                            <h2 id="pName"></h2>
+                            <span class="currentProject" ><b>Client name:</b></span>
+                            <span class="currentProject" id="clientName"></span><br>
+                            <span class="currentProject" ><b>Project Manager:</b></span>
+                            <span class="currentProject" id="proManager"></span><br>
+                            <span class="currentProject" ><b>Project Status:</b></span>
+                            <span class="currentProject" id="proStatus"></span><br>
+                            <span class="currentProject" ><b>Start Date:</b></span>
+                            <span class="currentProject" id="proSdate"></span>
+                            <span class="currentProject" ><b>End Date:</b></span>
+                            <span class="currentProject" id="proEdate"></span><br>
+                            <span class="currentProject" ><b>Duration:</b> </span>
+                            <span class="currentProject" id="day"></span>
+                        </div>
+                        <div class="right-sec">
+                            
+                            <div class="progress" id="progress">
+                                <svg class="progress-circle" width="180px" height="180px" xmlns="http://www.w3.org/2000/svg">
+	                                <circle class="progress-circle-back" cx="80" cy="80" r="74"></circle>
+                                    <circle class="progress-circle-prog" cx="80" cy="80" r="74"></circle>
+                                </svg>
+	                            <div class="progress-text" id="progressStatus" data-progress="0"></div>
+                            </div>	
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section class="block testimonial-area ">
-                <div class="title-area">
-                    <h3>Trusted by the best in industry</h3>
-                </div>
-                <div class="testimonial" id="page-content-test">
-                    <span id="user-msg">"Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Voloptatibus quia, nulla! Maiores et perferendis eaque,
-                        exercitationem praesentium nihil."</sapn0>
-                    <h4 id="user-name">Jerry Sevier</h4>
-                    <span class="secondary">ENTERPRISE ARCHITECT, LOREM ENERGY</span>
-                </div>
-            </section>
-        </div>
-        <footer>
-            <div class="footer">
-                <ul class="flex-box">
-                    <li>
-                        <h4>Contact</h4>
-                        <ul class="contact">
-                          <li>Live Chat</li>
-                          <li>+89009977-776</li>
-                          <li>asolution@contact.uc</li>
-                          <li>Facebook Page</li>
-                          <li>Instagram</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Training Lists</h4>
-                        <ul class="training">
-                          <li><a href="">Web Components</a></li>
-                          <li><a href="">Desktop Components</a></li>
-                          <li><a href="">Mobile Components</a></li>
-                          <li><a href="">Dashboard</a></li>
-                          <li><a href="">Testing & Debugging</a></li>
-                          <li><a href="">Design & UX</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>Careers</h4>
-                        <ul class="career">
-                            <li><a href="">Human Resources</a></li>
-                            <li><a href="">Information Technology</a></li>
-                            <li><a href="">Design/User Experience</a></li>
-                            <li><a href="">Marketing</a></li>
-                            <li><a href="">Product Management</a></li>
-                            <li><a href="">Quality Assurance</a></li> 
-                        </ul>  
-                    </li>
-                    <li>
-                        <h4>Awards</h4>
-                        <ul class="awards-footer">
-                            <li>Forbes</li>
-                            <li>Gartner</li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="copyright">
-                   <h4>Copyright @ 2020 ASolutions, All Rights Reserved</h4>
-                </div>
+                    
+                    <div class="project-tech">
+                        <label for="technologies"><b>Technology used:</b></label>
+                        <span class="currentProject" id="technology">Technology</span>
+                    </div>
+                    <div class="project-description">
+                        <label for="description"><b>Description:</b></label>
+                        <span class="currentProject" id="description">Description</span><br>
+                    </div>                
             </div>
-        </footer> 
-        <script type="module" src="./scripts/main.js"></script>
-        <script src="./scripts/es6task.js"></script>
+        </div>
+
+    </main>
+    <footer class="footer">Copyright</footer>
+    <script src="./scripts/formValidation.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="./scripts/addProject.js"></script>
 </body>
 </html>
-        
